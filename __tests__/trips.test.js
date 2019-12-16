@@ -24,8 +24,8 @@ describe('trip routes', () => {
     trip = await Trip.create({
       origin: 'Portland, OR, USA',
       destination: 'Stockholm, Sweden',
-      dateOfDeparture: new Date('2020-10-10'),
-      dateOfReturn: new Date('2020-10-30'),
+      dateOfDeparture: new Date('2019-10-10'),
+      dateOfReturn: new Date('2019-10-30'),
       modeOfTransit: 'airplane'
     });
 
@@ -33,7 +33,7 @@ describe('trip routes', () => {
       tripId: trip._id,
       name: 'Cafe Saturnus',
       notes: 'eat a lot of cardamom rolls!',
-      date: new Date('2020-10-11')
+      date: new Date('2019-10-11')
     });
 
   });
@@ -48,8 +48,8 @@ describe('trip routes', () => {
       .send({
         origin: 'Portland, OR, USA',
         destination: 'Stockholm, Sweden',
-        dateOfDeparture: new Date('2020-10-10'),
-        dateOfReturn: new Date('2020-10-30'),
+        dateOfDeparture: new Date('2019-10-10'),
+        dateOfReturn: new Date('2019-10-30'),
         modeOfTransit: 'airplane'
       })
       .then(response => {

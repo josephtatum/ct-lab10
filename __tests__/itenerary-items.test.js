@@ -24,8 +24,8 @@ describe('itenerary item routes', () => {
     trip = await Trip.create({
       origin: 'Portland, OR, USA',
       destination: 'Stockholm, Sweden',
-      dateOfDeparture: new Date('2020-10-10'),
-      dateOfReturn: new Date('2020-10-30'),
+      dateOfDeparture: new Date('2019-10-10'),
+      dateOfReturn: new Date('2019-10-30'),
       modeOfTransit: 'airplane'
     });
 
@@ -33,7 +33,7 @@ describe('itenerary item routes', () => {
       tripId: trip._id,
       name: 'Cafe Saturnus',
       notes: 'eat a lot of cardamom rolls!',
-      date: new Date('2020-10-11')
+      date: new Date('2019-10-11')
     });
 
   });
