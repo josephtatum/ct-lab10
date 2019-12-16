@@ -84,11 +84,26 @@ describe('app routes', () => {
   });
 
   it('should be able to return get a trip by ID', () => {
-
     return request(app)
-      .get(`api/v1/trips/${trip._id}`)
+      .get(`/api/v1/trips/${trip._id}`)
       .then(response => {
-        expect(response.body).toEqual('');
+        expect(response.body).toEqual({
+          __v: 0,
+          _id: expect.any(String),
+          dateOfDeparture: expect.any(String),
+          dateOfReturn: expect.any(String),
+          destination: 'Stockholm, Sweden',
+          iteneraryItems: [
+            {
+              '__v': 0,
+              '_id': expect.any(String),
+              'name': 'Cafe Saturnus',
+              'notes': 'eat a lot of cardamom rolls!',
+              'tripId': expect.any(String)
+            }
+          ],
+          modeOfTransit: 'airplane',
+          origin: 'Portland, OR, USA' });
       });
   });
 
