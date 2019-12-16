@@ -64,11 +64,22 @@ describe('app routes', () => {
       });
   });
 
-  it('should be able to return all trips', () => {
+  it('should be able to return all trips', async() => {
+
     return request(app)
-      .get('/')
+      .get('/api/v1/trips')
       .then(response => {
-        expect(response.body).toEqual('')
+        response.body.forEach(trip => {
+          expect(trip).toEqual({
+            __v: 0,
+            _id: expect.any(String),
+            dateOfDeparture: expect.any(String),
+            destination: expect.any(String),
+            origin: expect.any(String),
+            modeOfTransit: expect.any(String),
+            dateOfReturn: expect.any(String)
+          });
+        });
       });
   });
 
