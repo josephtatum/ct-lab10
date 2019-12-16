@@ -32,7 +32,8 @@ describe('trip routes', () => {
     iteneraryItem = await IteneraryItem.create({
       tripId: trip._id,
       name: 'Cafe Saturnus',
-      notes: 'eat a lot of cardamom rolls!'
+      notes: 'eat a lot of cardamom rolls!',
+      date: new Date('2020-10-11')
     });
 
   });
@@ -99,7 +100,8 @@ describe('trip routes', () => {
               _id: expect.any(String),
               name: 'Cafe Saturnus',
               notes: 'eat a lot of cardamom rolls!',
-              tripId: expect.any(String)
+              tripId: expect.any(String),
+              date: expect.any(String)
             }
           ],
           modeOfTransit: 'airplane',

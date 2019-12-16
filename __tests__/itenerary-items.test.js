@@ -32,7 +32,8 @@ describe('itenerary item routes', () => {
     iteneraryItem = await IteneraryItem.create({
       tripId: trip._id,
       name: 'Cafe Saturnus',
-      notes: 'eat a lot of cardamom rolls!'
+      notes: 'eat a lot of cardamom rolls!',
+      date: new Date('2020-10-11')
     });
 
   });
@@ -47,7 +48,8 @@ describe('itenerary item routes', () => {
       .send({
         tripId: trip._id,
         name: 'Cafe Saturnus',
-        notes: 'eat a lot of cardamom rolls!'
+        notes: 'eat a lot of cardamom rolls!',
+        date: new Date('2020-10-11')
       })
       .then(response => {
         expect(response.body).toEqual({
@@ -55,7 +57,8 @@ describe('itenerary item routes', () => {
           _id: expect.any(String),
           name: 'Cafe Saturnus',
           notes: 'eat a lot of cardamom rolls!',
-          tripId: expect.any(String)
+          tripId: expect.any(String),
+          date: expect.any(String)
         });
       });
   });
@@ -69,7 +72,8 @@ describe('itenerary item routes', () => {
           _id: expect.any(String),
           name: 'Cafe Saturnus',
           notes: 'eat a lot of cardamom rolls!',
-          tripId: expect.any(String)
+          tripId: expect.any(String),
+          date: expect.any(String)
         });
       });
   });
