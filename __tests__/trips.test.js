@@ -95,11 +95,11 @@ describe('app routes', () => {
           destination: 'Stockholm, Sweden',
           iteneraryItems: [
             {
-              '__v': 0,
-              '_id': expect.any(String),
-              'name': 'Cafe Saturnus',
-              'notes': 'eat a lot of cardamom rolls!',
-              'tripId': expect.any(String)
+              __v: 0,
+              _id: expect.any(String),
+              name: 'Cafe Saturnus',
+              notes: 'eat a lot of cardamom rolls!',
+              tripId: expect.any(String)
             }
           ],
           modeOfTransit: 'airplane',
