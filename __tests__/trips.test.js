@@ -124,4 +124,20 @@ describe('app routes', () => {
       });
   });
 
+  it('should be able to find and delete a trip by ID', () => {
+    return request(app)
+      .delete(`/api/v1/trips/${trip._id}`)
+      .then(response => {
+        expect(response.body).toEqual({
+          __v: 0,
+          _id: expect.any(String),
+          dateOfDeparture: expect.any(String),
+          destination: 'Stockholm, Sweden',
+          origin: 'Portland, OR, USA',
+          modeOfTransit: 'airplane',
+          dateOfReturn: expect.any(String)
+        })
+      });
+  });
+
 });
