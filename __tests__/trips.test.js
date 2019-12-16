@@ -64,7 +64,7 @@ describe('app routes', () => {
       });
   });
 
-  it('should be able to return all trips', async() => {
+  it('should be able to return all trips', () => {
 
     return request(app)
       .get('/api/v1/trips')
@@ -80,6 +80,15 @@ describe('app routes', () => {
             dateOfReturn: expect.any(String)
           });
         });
+      });
+  });
+
+  it('should be able to return get a trip by ID', () => {
+
+    return request(app)
+      .get(`api/v1/trips/${trip._id}`)
+      .then(response => {
+        expect(response.body).toEqual('');
       });
   });
 
