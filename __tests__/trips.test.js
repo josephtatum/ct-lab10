@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const Trip = require('../lib/models/Trip');
 const IteneraryItem = require('../lib/models/IteneraryItem');
 
-describe('app routes', () => {
+describe('trip routes', () => {
 
   beforeAll(() => {
     connect();

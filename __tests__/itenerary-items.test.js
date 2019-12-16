@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const Trip = require('../lib/models/Trip');
 const IteneraryItem = require('../lib/models/IteneraryItem');
 
-describe('app routes', () => {
+describe('itenerary item routes', () => {
 
   beforeAll(() => {
     connect();
@@ -49,6 +49,20 @@ describe('app routes', () => {
         name: 'Cafe Saturnus',
         notes: 'eat a lot of cardamom rolls!'
       })
+      .then(response => {
+        expect(response.body).toEqual({
+          __v: 0,
+          _id: expect.any(String),
+          name: 'Cafe Saturnus',
+          notes: 'eat a lot of cardamom rolls!',
+          tripId: expect.any(String)
+        });
+      });
+  });
+
+  it('should be able to delete an itenerary item', () => {
+    return request(app)
+      .delete(`/api/v1/itenerary-items/${iteneraryItem._id}`)
       .then(response => {
         expect(response.body).toEqual({
           __v: 0,
