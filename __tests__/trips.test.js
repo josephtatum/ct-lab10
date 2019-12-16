@@ -63,4 +63,13 @@ describe('app routes', () => {
         });
       });
   });
+
+  it('should be able to return all trips', () => {
+    return request(app)
+      .get('/')
+      .then(response => {
+        expect(response.body).toEqual('')
+      });
+  });
+
 });
