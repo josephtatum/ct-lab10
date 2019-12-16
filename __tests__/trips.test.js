@@ -107,4 +107,21 @@ describe('app routes', () => {
       });
   });
 
+  it('should be able to find and update a trip by ID', () => {
+    return request(app)
+      .patch(`/api/v1/trips/${trip._id}`)
+      .send({ destination: 'Oslo, Norway' })
+      .then(response => {
+        expect(response.body).toEqual({
+          __v: 0,
+          _id: expect.any(String),
+          dateOfDeparture: expect.any(String),
+          destination: 'Oslo, Norway',
+          origin: 'Portland, OR, USA',
+          modeOfTransit: 'airplane',
+          dateOfReturn: expect.any(String)
+        });
+      });
+  });
+
 });
