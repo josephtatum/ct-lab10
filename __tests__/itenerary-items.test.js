@@ -34,7 +34,8 @@ describe('itenerary item routes', () => {
       name: 'Cafe Saturnus',
       notes: 'eat a lot of cardamom rolls!',
       date: new Date('2019-10-11'),
-      city: 'Stockholm'
+      latitude: 59.3293,
+      longitude: 18.0686
     });
 
   });
@@ -51,7 +52,8 @@ describe('itenerary item routes', () => {
         name: 'Cafe Saturnus',
         notes: 'eat a lot of cardamom rolls!',
         date: new Date('2020-10-11'),
-        city: 'Stockholm'
+        latitude: 59.3293,
+        longitude: 18.0686
       })
       .then(response => {
         expect(response.body).toEqual({
@@ -61,7 +63,8 @@ describe('itenerary item routes', () => {
           notes: 'eat a lot of cardamom rolls!',
           tripId: expect.any(String),
           date: expect.any(String),
-          city: 'Stockholm'
+          latitude: 59.3293,
+          longitude: 18.0686
         });
       });
   });
@@ -77,7 +80,8 @@ describe('itenerary item routes', () => {
           notes: 'eat a lot of cardamom rolls!',
           tripId: expect.any(String),
           date: expect.any(String),
-          city: 'Stockholm'
+          latitude: 59.3293,
+          longitude: 18.0686
         });
       });
   });

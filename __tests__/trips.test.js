@@ -32,7 +32,8 @@ describe('trip routes', () => {
     iteneraryItem = await IteneraryItem.create({
       tripId: trip._id,
       name: 'Cafe Saturnus',
-      city: 'Stockholm',
+      latitude: 59.3293,
+      longitude: 18.0686,
       notes: 'eat a lot of cardamom rolls!',
       date: new Date('2019-10-11')
     });
@@ -103,7 +104,8 @@ describe('trip routes', () => {
               notes: 'eat a lot of cardamom rolls!',
               tripId: expect.any(String),
               date: expect.any(String),
-              city: 'Stockholm'
+              latitude: 59.3293,
+              longitude: 18.0686
             }
           ],
           modeOfTransit: 'airplane',
