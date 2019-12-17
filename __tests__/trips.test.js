@@ -142,7 +142,7 @@ describe('trip routes', () => {
           origin: 'Portland, OR, USA',
           modeOfTransit: 'airplane',
           dateOfReturn: expect.any(String)
-        })
+        });
       });
   });
 

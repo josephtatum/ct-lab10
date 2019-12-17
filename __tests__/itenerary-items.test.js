@@ -19,7 +19,7 @@ describe('itenerary item routes', () => {
 
   let trip;
   let iteneraryItem;
-  beforeEach(async () => {
+  beforeEach(async() => {
 
     trip = await Trip.create({
       origin: 'Portland, OR, USA',
